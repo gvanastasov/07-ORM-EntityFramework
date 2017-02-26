@@ -1,0 +1,6 @@
+C:\Users\Georgi\Documents\Softuni\07 ORM EntityFramework\Advanced DB\DB_Apps_Introduction\bin\Debug\DB_Apps_Introduction.exe.config
+C:\Users\Georgi\Documents\Softuni\07 ORM EntityFramework\Advanced DB\DB_Apps_Introduction\bin\Debug\DB_Apps_Introduction.exe
+C:\Users\Georgi\Documents\Softuni\07 ORM EntityFramework\Advanced DB\DB_Apps_Introduction\bin\Debug\DB_Apps_Introduction.pdb
+C:\Users\Georgi\Documents\Softuni\07 ORM EntityFramework\Advanced DB\DB_Apps_Introduction\obj\Debug\DB_Apps_Introduction.csprojResolveAssemblyReference.cache
+C:\Users\Georgi\Documents\Softuni\07 ORM EntityFramework\Advanced DB\DB_Apps_Introduction\obj\Debug\DB_Apps_Introduction.exe
+C:\Users\Georgi\Documents\Softuni\07 ORM EntityFramework\Advanced DB\DB_Apps_Introduction\obj\Debug\DB_Apps_Introduction.pdb
