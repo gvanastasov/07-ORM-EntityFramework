@@ -40,6 +40,9 @@ integrated security=True;");
                         case "t casing":
                             ChangeTownNamesCasing(connection);
                             break;
+                        case "v del":
+                            DeleteVillain(connection);
+                            break;
                         case "exit":
                             return;
                         case "help":
@@ -49,6 +52,66 @@ integrated security=True;");
                     }
                     Console.WriteLine();
                 }
+            }
+        }
+
+        private static void DeleteVillain(SqlConnection connection)
+        {
+            Console.WriteLine();
+
+            Console.Write("Villain Id: ");
+            var villainIdString = Console.ReadLine();
+
+            try
+            {
+                var vId = new SqlParameter("@vid", int.Parse(villainIdString));
+
+                SqlCommand cmd = connection.CreateCommand();
+                cmd.Parameters.Add(vId);
+
+                SqlTransaction transaction = connection.BeginTransaction("Deleting_Villain");
+                cmd.Transaction = transaction;
+
+                try
+                {
+                    cmd.CommandText = "SELECT [Name] FROM Villains WHERE [Id]=@vid";
+                    var vName = cmd.ExecuteScalar();
+
+                    if(vName != null)
+                    {
+                        // release minions first, because of the FK constraint
+                        cmd.CommandText = "Delete from VillainsMinions where [VillainsId] = @vid";
+                        var affectedCount = cmd.ExecuteNonQuery();
+
+                        // delete actual villain
+                        cmd.CommandText = "delete from Villains where [Id] = @vid";
+
+                        Console.WriteLine($"{vName} was deleted");
+                        Console.WriteLine($"{affectedCount} minions released");
+
+                        // release program resources
+                        transaction.Commit();
+
+                        transaction.Dispose();
+
+                        cmd.Parameters.Clear();
+                        cmd.Dispose();
+                    }
+                    else
+                    {
+                        Console.WriteLine("No such villain was found");
+                    }
+
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine($"Something went wrong, reverting DB. {e.GetType()}: {e.Message}");
+                    transaction.Rollback();
+                }
+            }
+            catch 
+            {
+                Console.WriteLine("Wrong input data format. Please use: {int}");
             }
         }
 
@@ -68,7 +131,8 @@ set [Name]=UPPER([Name])
 OUTPUT INSERTED.[Name]
 where [ContryCode] = (select [Code] 
 					from Countries 
-					where [Name] = @cname)";
+					where [Name] = @cname)
+  AND [Name] <> UPPER([Name])";
 
             using (SqlCommand updateCmd = new SqlCommand(query, connection))
             {
@@ -247,6 +311,7 @@ group by v.[Name]";
             Console.WriteLine("\t1.Get Villains' Names: get v-names");
             Console.WriteLine("\t2.Get Minions Names: get vm-info");
             Console.WriteLine("\t3.Add minion: add m");
+            Console.WriteLine("\t4.Change Town Names Casing: t casing");
             Console.WriteLine();
             Console.WriteLine("\tQuit app: exit");
         }

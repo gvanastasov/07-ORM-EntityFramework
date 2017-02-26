@@ -59,8 +59,28 @@ begin transaction
 declare @cname nvarchar(100) = 'Bulgaria';
 update Towns
    set [Name]=UPPER([Name])
+OUTPUT INSERTED.[Name]
  where [ContryCode] = (select [Code] 
 					  from Countries 
 					  where [Name] = @cname)
+  and [Name] <> UPPER([Name])
+rollback
+go
+
+
+-- 06. Remove Villain
+
+begin transaction
+
+declare @vid int = 188; 
+declare @rm table([Id] int)
+
+Delete from VillainsMinions
+output DELETED.[MinionId] INTO @rm
+where [VillainsId] = @vid
+
+SELECT [Name] FROM Minions as m
+join @rm on m.[Id] = @rm.[Id]
 
 rollback
+
