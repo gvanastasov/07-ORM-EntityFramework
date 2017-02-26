@@ -34,6 +34,9 @@ integrated security=True;");
                         case "get vm-info":
                             GetVillainInfo(connection);
                             break;
+                        case "add m":
+                            CreateNewMinion(connection);
+                            break;
                         case "exit":
                             return;
                         case "help":
@@ -46,7 +49,83 @@ integrated security=True;");
             }
         }
 
+        private static void CreateNewMinion(SqlConnection connection)
+        {
+            Console.WriteLine();
 
+            Console.Write("Minion: ");
+            var minionData = Console.ReadLine().Split(' ');
+
+            Console.Write("Villain: ");
+            var villainName = Console.ReadLine();
+
+            Console.WriteLine();
+
+            try
+            {
+                SqlParameter[] queryParams = new SqlParameter[] {
+                    new SqlParameter("@mname", minionData[0]),
+                    new SqlParameter("@mage", int.Parse(minionData[1])),
+                    new SqlParameter("@mtown", minionData[2]),
+                    new SqlParameter("@vname", villainName),
+                };
+
+                SqlCommand cmd = connection.CreateCommand();
+                cmd.Parameters.AddRange(queryParams);
+
+                SqlTransaction transaction = connection.BeginTransaction("Adding Minion");
+                cmd.Transaction = transaction;
+
+                try
+                {
+                    // get town id, if not existing add new one and select it
+                    cmd.CommandText = "SELECT [Id] FROM Towns Where [Name]=@mtown";
+                    var townId = cmd.ExecuteScalar();
+                    if (townId == null)
+                    {
+                        cmd.CommandText = "INSERT INTO Towns OUTPUT Inserted.[Id] VALUES (@mtown, 'BGR')";
+                        townId = cmd.ExecuteScalar();
+                        Console.WriteLine($"Town {minionData[2]} was added to the database.");
+                    }
+
+                    // add new minion
+                    cmd.CommandText = $"INSERT INTO Minions OUTPUT Inserted.[Id] VALUES (@mname, @mage, {(int)townId})";
+                    var mId = cmd.ExecuteScalar();
+
+                    // get villain id, if not existing add new one and select it
+                    cmd.CommandText = $"SELECT [Id] FROM Villains WHERE [Name]=@vname";
+                    var vId = cmd.ExecuteScalar();
+                    if(vId == null)
+                    {
+                        cmd.CommandText = "INSERT INTO Villains OUTPUT Inserted.[Id] VALUES (@vname, 3)";
+                        vId = cmd.ExecuteScalar();
+                        Console.WriteLine($"Villain {villainName} was added to the database.");
+                    }
+
+                    // add reference between new minion and (new) villain
+                    cmd.CommandText = $"INSERT INTO VillainsMinions VALUES ({(int)mId}, {(int)vId})";
+                    cmd.ExecuteNonQuery();
+
+                    // dispose all unneeded resources
+                    transaction.Commit();
+                    transaction.Dispose();
+
+                    cmd.Parameters.Clear();
+                    cmd.Dispose();
+
+                    Console.WriteLine($"Successfully added {minionData[0]} to be minion of {villainName}.");
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine($"Something went wrong, reverting DB. {e.GetType()}: {e.Message}");
+                    transaction.Rollback();
+                }
+            }
+            catch
+            {
+                Console.WriteLine("Wrong input data format. Please use: {string} {int} {string}");
+            }
+        }
 
         private static void GetVillainInfo(SqlConnection connection)
         {
@@ -120,6 +199,7 @@ group by v.[Name]";
             Console.WriteLine("Possible commands are:");
             Console.WriteLine("\t1.Get Villains' Names: get v-names");
             Console.WriteLine("\t2.Get Minions Names: get vm-info");
+            Console.WriteLine("\t3.Add minion: add m");
             Console.WriteLine();
             Console.WriteLine("\tQuit app: exit");
         }
