@@ -37,6 +37,9 @@ integrated security=True;");
                         case "add m":
                             CreateNewMinion(connection);
                             break;
+                        case "t casing":
+                            ChangeTownNamesCasing(connection);
+                            break;
                         case "exit":
                             return;
                         case "help":
@@ -45,6 +48,50 @@ integrated security=True;");
                             break;
                     }
                     Console.WriteLine();
+                }
+            }
+        }
+
+        private static void ChangeTownNamesCasing(SqlConnection connection)
+        {
+            Console.WriteLine();
+
+            Console.Write("Country: ");
+            var countryName = Console.ReadLine();
+
+            Console.WriteLine();
+
+            SqlParameter countryNameParam = new SqlParameter("@cname", countryName.ToString());
+            var query = @"
+update Towns
+set [Name]=UPPER([Name])
+OUTPUT INSERTED.[Name]
+where [ContryCode] = (select [Code] 
+					from Countries 
+					where [Name] = @cname)";
+
+            using (SqlCommand updateCmd = new SqlCommand(query, connection))
+            {
+                updateCmd.Parameters.Add(countryNameParam);
+                SqlDataReader result = updateCmd.ExecuteReader();
+
+                using (result)
+                {
+                    var affected = new List<string>();
+                    while (result.Read())
+                    {
+                        affected.Add(result["Name"].ToString());
+                    }
+
+                    if(affected.Count > 0)
+                    {
+                        Console.WriteLine($"{affected.Count} town name{((affected.Count > 1) ? "s were" : " was")} affected.");
+                        Console.WriteLine($"[{string.Join(", ", affected)}]");
+                    }
+                    else
+                    {
+                        Console.WriteLine("No town names were affected.");
+                    }
                 }
             }
         }
