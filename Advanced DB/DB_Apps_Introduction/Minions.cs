@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -46,6 +47,9 @@ integrated security=True;");
                         case "fl order":
                             PrintAllMinionNames(connection);
                             break;
+                        case "m age inc":
+                            IncreaseMinionsAge(connection);
+                            break;
                         case "exit":
                             return;
                         case "help":
@@ -56,6 +60,68 @@ integrated security=True;");
                     Console.WriteLine();
                 }
             }
+        }
+
+        private static void IncreaseMinionsAge(SqlConnection connection)
+        {
+            Console.WriteLine();
+            Console.Write("Minions Id`s: ");
+
+            try
+            {
+                var targets = Console.ReadLine().Split(' ').Select(int.Parse).ToArray();
+
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.Connection = connection;
+
+                    // todo: solve this table type
+                    var parameters = new string[targets.Length];
+                    for (int i = 0; i < targets.Length; i++)
+                    {
+                        parameters[i] = $"@Id{i}";
+                        cmd.Parameters.AddWithValue(parameters[i], targets[i]);
+                    }
+
+                    cmd.CommandText = $@"
+update Minions set [Age] += 1
+where [Id] in ({string.Join(", ", parameters)})";
+
+                    cmd.ExecuteNonQuery();
+
+                    cmd.CommandText = @"select [Id], [Name], [Age] from Minions";
+
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            var name = reader["Name"].ToString();
+                            if(targets.Contains((int)reader["Id"]))
+                            {
+                                name = string.Join(" ",name
+                                    .Split(' ')
+                                    .ToList()
+                                    .Select(s => s.First().ToString().ToUpper() + s.Substring(1))
+                                );
+                            }
+                            else
+                            {
+                                name = name.ToLower();
+                            }
+
+                            Console.WriteLine($"{name} {reader["Age"]}");
+                        }
+                    }
+                }
+
+
+            }
+            catch(Exception e)
+            {
+                Console.WriteLine("Invalid input. Please use {int} values separated by space : " + e);
+            }
+
+
         }
 
         private static void PrintAllMinionNames(SqlConnection connection)

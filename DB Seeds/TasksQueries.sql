@@ -72,15 +72,27 @@ go
 
 begin transaction
 
-declare @vid int = 188; 
-declare @rm table([Id] int)
+declare @vid int = 1; 
 
 Delete from VillainsMinions
-output DELETED.[MinionId] INTO @rm
 where [VillainsId] = @vid
 
-SELECT [Name] FROM Minions as m
-join @rm on m.[Id] = @rm.[Id]
 
 rollback
 
+-- 07 Print ALl minions names
+
+select [Name] from Minions
+
+
+-- 08 Increase Minions Age
+
+begin transaction
+declare @arr table( [Id] int );
+
+update Minions set [Age] += 1
+where [Id] in (select [Id] from @arr)
+
+select [Name], [Age] from Minions
+
+rollback
