@@ -43,6 +43,9 @@ integrated security=True;");
                         case "v del":
                             DeleteVillain(connection);
                             break;
+                        case "fl order":
+                            PrintAllMinionNames(connection);
+                            break;
                         case "exit":
                             return;
                         case "help":
@@ -51,6 +54,42 @@ integrated security=True;");
                             break;
                     }
                     Console.WriteLine();
+                }
+            }
+        }
+
+        private static void PrintAllMinionNames(SqlConnection connection)
+        {
+            Console.WriteLine();
+
+            var query = "select [Name] from Minions";
+            using (SqlCommand cmd = new SqlCommand(query, connection))
+            using (SqlDataReader reader = cmd.ExecuteReader())
+            {
+                List<string> names = new List<string>();
+
+                while (reader.Read())
+                {
+                    var value = reader["Name"].ToString();
+                    names.Add(value);
+                }
+
+                bool fromStart = true;
+                while (names.Count > 0)
+                {
+                    string value;
+                    if(fromStart)
+                    {
+                        value = names[0];
+                        names.RemoveAt(0);
+                    }
+                    else
+                    {
+                        value = names[names.Count - 1];
+                        names.RemoveAt(names.Count - 1);
+                    }
+                    Console.WriteLine(value);
+                    fromStart = !fromStart;
                 }
             }
         }
@@ -312,6 +351,7 @@ group by v.[Name]";
             Console.WriteLine("\t2.Get Minions Names: get vm-info");
             Console.WriteLine("\t3.Add minion: add m");
             Console.WriteLine("\t4.Change Town Names Casing: t casing");
+            Console.WriteLine("\t5.Delete Villain: v del");
             Console.WriteLine();
             Console.WriteLine("\tQuit app: exit");
         }
