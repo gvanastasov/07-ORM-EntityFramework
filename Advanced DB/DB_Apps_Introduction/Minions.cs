@@ -50,6 +50,9 @@ integrated security=True;");
                         case "m age inc":
                             IncreaseMinionsAge(connection);
                             break;
+                        case "m age proc":
+                            IncreaseAgeProcedure(connection);
+                            break;
                         case "exit":
                             return;
                         case "help":
@@ -59,6 +62,36 @@ integrated security=True;");
                     }
                     Console.WriteLine();
                 }
+            }
+        }
+
+        private static void IncreaseAgeProcedure(SqlConnection connection)
+        {
+            Console.WriteLine();
+
+            try
+            {
+                Console.Write("Minions Id: ");
+                var targetId = int.Parse(Console.ReadLine());
+
+                using (SqlCommand cmd = new SqlCommand("usp_GetOlder", connection))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@MinionId", targetId);
+
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            Console.WriteLine($"{reader["Name"]} got old and now is - {reader["Age"]}");
+                        }
+                    }
+                }
+
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
             }
         }
 

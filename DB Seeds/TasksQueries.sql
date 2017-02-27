@@ -89,10 +89,20 @@ select [Name] from Minions
 
 begin transaction
 declare @arr table( [Id] int );
+insert into @arr values (1),(2),(4)
 
-update Minions set [Age] += 1
+update Minions set [Age] += 1000
 where [Id] in (select [Id] from @arr)
 
 select [Name], [Age] from Minions
 
 rollback
+go
+
+-- 09 Increase Age stored procedure
+
+create procedure IncreaseMinionAge
+	@id int
+as
+	
+go
