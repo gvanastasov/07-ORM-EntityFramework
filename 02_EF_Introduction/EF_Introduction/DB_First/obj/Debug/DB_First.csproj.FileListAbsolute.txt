@@ -1,0 +1,1 @@
+C:\Users\Georgi\Documents\Softuni\07 ORM EntityFramework\02_EF_Introduction\EF_Introduction\DB_First\bin\Debug\DB_First.exe.config
