@@ -1,1 +1,10 @@
 C:\Users\Georgi\Documents\Softuni\07 ORM EntityFramework\02_EF_Introduction\EF_Introduction\DB_First\bin\Debug\DB_First.exe.config
+C:\Users\Georgi\Documents\Softuni\07 ORM EntityFramework\02_EF_Introduction\EF_Introduction\DB_First\obj\Debug\DB_First.csprojResolveAssemblyReference.cache
+C:\Users\Georgi\Documents\Softuni\07 ORM EntityFramework\02_EF_Introduction\EF_Introduction\DB_First\bin\Debug\DB_First.exe
+C:\Users\Georgi\Documents\Softuni\07 ORM EntityFramework\02_EF_Introduction\EF_Introduction\DB_First\bin\Debug\DB_First.pdb
+C:\Users\Georgi\Documents\Softuni\07 ORM EntityFramework\02_EF_Introduction\EF_Introduction\DB_First\bin\Debug\EntityFramework.dll
+C:\Users\Georgi\Documents\Softuni\07 ORM EntityFramework\02_EF_Introduction\EF_Introduction\DB_First\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Georgi\Documents\Softuni\07 ORM EntityFramework\02_EF_Introduction\EF_Introduction\DB_First\bin\Debug\EntityFramework.xml
+C:\Users\Georgi\Documents\Softuni\07 ORM EntityFramework\02_EF_Introduction\EF_Introduction\DB_First\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Georgi\Documents\Softuni\07 ORM EntityFramework\02_EF_Introduction\EF_Introduction\DB_First\obj\Debug\DB_First.exe
+C:\Users\Georgi\Documents\Softuni\07 ORM EntityFramework\02_EF_Introduction\EF_Introduction\DB_First\obj\Debug\DB_First.pdb
