@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DB_First.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,12 +23,41 @@ namespace DB_First
                     case "task 3": EmployessById(); break;
                     case "task 4": EmployeesWithSalaryOver50(); break;
                     case "task 5": EmployeesFromResearchAndDev(); break;
+                    case "task 6": AddingNewAddressUpdatingEmployee(); break;
                     default:
                         Console.WriteLine("Use only 'task <int>' syntax to speciify task from homework. 'exit' command to return.");
                         break;
                 }
 
                 Console.WriteLine();
+            }
+        }
+
+        private static void AddingNewAddressUpdatingEmployee()
+        {
+
+            using (var ctx = new SoftuniContext())
+            {
+                var newAddress = new Address()
+                {
+                    AddressText = "Vitoska 15",
+                    TownID = 4
+                };
+
+                var emp = ctx.Employees.FirstOrDefault(e => e.LastName == "Nakov");
+
+                if(emp != null)
+                {
+                    emp.Address = newAddress;
+                }
+
+                ctx.SaveChanges();
+
+                var adds = ctx.Employees.OrderByDescending(e => e.AddressID).Take(10).Select(e => e.Address.AddressText);
+                foreach (var address in adds.ToList())
+                {
+                    Console.WriteLine(address.ToString());
+                }
             }
         }
 
