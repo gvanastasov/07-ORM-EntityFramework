@@ -24,12 +24,28 @@ namespace DB_First
                     case "task 4": EmployeesWithSalaryOver50(); break;
                     case "task 5": EmployeesFromResearchAndDev(); break;
                     case "task 6": AddingNewAddressUpdatingEmployee(); break;
+                    case "task 7": FindEmployeesInPeriod(); break;
                     default:
                         Console.WriteLine("Use only 'task <int>' syntax to speciify task from homework. 'exit' command to return.");
                         break;
                 }
 
                 Console.WriteLine();
+            }
+        }
+
+        private static void FindEmployeesInPeriod()
+        {
+            using (var ctx =  new SoftuniContext())
+            {
+                var filtered = ctx.Employees.Where(e => e.Projects.Any(p => p.StartDate.Year > 2001 && p.StartDate.Year <= 2003)).ToList();
+
+                foreach (var emp in filtered)
+                {
+                    Console.WriteLine($"{emp.FirstName} {emp.LastName} {emp.Manager.FirstName}");
+                    emp.Projects.ToList().ForEach(p => Console.WriteLine($"--{p.Name} {p.StartDate.ToString()} {p.EndDate.ToString()}"));
+                }
+
             }
         }
 
