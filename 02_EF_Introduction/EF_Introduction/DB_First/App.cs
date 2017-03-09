@@ -25,12 +25,26 @@ namespace DB_First
                     case "task 5": EmployeesFromResearchAndDev(); break;
                     case "task 6": AddingNewAddressUpdatingEmployee(); break;
                     case "task 7": FindEmployeesInPeriod(); break;
+                    case "task 8": AddressesByTownName(); break;
                     default:
                         Console.WriteLine("Use only 'task <int>' syntax to speciify task from homework. 'exit' command to return.");
                         break;
                 }
 
                 Console.WriteLine();
+            }
+        }
+
+        private static void AddressesByTownName()
+        {
+            using (var ctx = new SoftuniContext())
+            {
+                var filtered = ctx.Addresses.OrderByDescending(a => a.Employees.Count).ThenBy(a => a.Town.Name).Take(10).ToList();
+
+                foreach (var a in filtered)
+                {
+                    Console.WriteLine($"{a.AddressText}, {a.Town.Name} - {a.Employees.Count} employees");
+                }
             }
         }
 
