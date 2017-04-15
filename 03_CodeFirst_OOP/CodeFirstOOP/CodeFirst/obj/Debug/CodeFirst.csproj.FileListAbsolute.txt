@@ -1,0 +1,10 @@
+C:\Georgi\Softuni\07-ORM-EntityFramework\03_CodeFirst_OOP\CodeFirstOOP\CodeFirst\bin\Debug\CodeFirst.exe.config
+C:\Georgi\Softuni\07-ORM-EntityFramework\03_CodeFirst_OOP\CodeFirstOOP\CodeFirst\bin\Debug\CodeFirst.exe
+C:\Georgi\Softuni\07-ORM-EntityFramework\03_CodeFirst_OOP\CodeFirstOOP\CodeFirst\bin\Debug\CodeFirst.pdb
+C:\Georgi\Softuni\07-ORM-EntityFramework\03_CodeFirst_OOP\CodeFirstOOP\CodeFirst\bin\Debug\EntityFramework.dll
+C:\Georgi\Softuni\07-ORM-EntityFramework\03_CodeFirst_OOP\CodeFirstOOP\CodeFirst\bin\Debug\EntityFramework.SqlServer.dll
+C:\Georgi\Softuni\07-ORM-EntityFramework\03_CodeFirst_OOP\CodeFirstOOP\CodeFirst\bin\Debug\EntityFramework.xml
+C:\Georgi\Softuni\07-ORM-EntityFramework\03_CodeFirst_OOP\CodeFirstOOP\CodeFirst\bin\Debug\EntityFramework.SqlServer.xml
+C:\Georgi\Softuni\07-ORM-EntityFramework\03_CodeFirst_OOP\CodeFirstOOP\CodeFirst\obj\Debug\CodeFirst.csprojResolveAssemblyReference.cache
+C:\Georgi\Softuni\07-ORM-EntityFramework\03_CodeFirst_OOP\CodeFirstOOP\CodeFirst\obj\Debug\CodeFirst.exe
+C:\Georgi\Softuni\07-ORM-EntityFramework\03_CodeFirst_OOP\CodeFirstOOP\CodeFirst\obj\Debug\CodeFirst.pdb
