@@ -51,7 +51,7 @@ namespace OOP_intro
                         break;
                     case 4:
                         {
-
+                            StudentsCounter();
                         }
                         break;
                 }
@@ -59,6 +59,27 @@ namespace OOP_intro
             }
 
 
+        }
+
+        private static void StudentsCounter()
+        {
+            Console.Clear();
+            Console.WriteLine("Count Students: create instances of the student class and keep a static count of them. Use keyword 'end' to return to task menu.");
+            Console.WriteLine();
+
+            while (true)
+            {
+                var cmd = Console.ReadLine();
+
+                if (cmd == "end") break;
+
+                var student = new Student() { Name = cmd };
+
+            }
+
+            Console.WriteLine("Instances count: " + Student.Count);
+            Console.WriteLine("Press any key to return...");
+            Console.ReadLine();
         }
 
         private static void OldestFamilyMember()
@@ -88,7 +109,6 @@ namespace OOP_intro
             Console.WriteLine("Press any key to return...");
             Console.ReadLine();
         }
-
         private static void CreatePersonsConstructors()
         {
             Console.Clear();
