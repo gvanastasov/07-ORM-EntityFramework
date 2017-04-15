@@ -54,11 +54,31 @@ namespace OOP_intro
                             StudentsCounter();
                         }
                         break;
+                    case 5:
+                        {
+                            PlanckConstant();
+                        }
+                        break;
+                    case 6:
+                        {
+
+                        }
+                        break;
                 }
 
             }
 
 
+        }
+
+        private static void PlanckConstant()
+        {
+            Console.Clear();
+            Console.WriteLine("Static Class definition for Planck reduced constant: " + Calculation.ReducedPlanckConstant());
+            Console.WriteLine();
+
+            Console.WriteLine("Press any key to return...");
+            Console.ReadLine();
         }
 
         private static void StudentsCounter()
