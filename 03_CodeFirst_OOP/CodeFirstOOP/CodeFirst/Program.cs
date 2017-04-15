@@ -11,20 +11,27 @@ namespace CodeFirst
     {
         static void Main(string[] args)
         {
-            //var context = new UsersContext();
-            //context.Database.Initialize(true);
+            var context = new UsersContext();
+            context.Database.Initialize(true);
 
-            //using (context)
-            //{
-            // TODO: needs a valid entity
+            using (context)
+            {
+                //TODO: needs a valid entity
+                var newUser = new User();
+                newUser.Username = "Pesho";
+                newUser.Password = "BestPassword";
+                newUser.Age = 10;
 
-            //    var newUser = new User();
-            //    newUser.Username = "Pesho";
-            //    newUser.Password = "BestPassword";
-            //    newUser.Age = 10;
-            //    context.Users.Add(newUser);
-            //    context.SaveChanges();
-            //}
+                try
+                {
+                    context.Users.Add(newUser);
+                    context.SaveChanges();
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e);
+                }
+            }
         }
     }
 }

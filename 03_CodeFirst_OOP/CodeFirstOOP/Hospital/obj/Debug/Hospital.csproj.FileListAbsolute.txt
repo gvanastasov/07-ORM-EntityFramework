@@ -1,0 +1,13 @@
+C:\Georgi\Softuni\07-ORM-EntityFramework\03_CodeFirst_OOP\CodeFirstOOP\Hospital\bin\Debug\Hospital.exe.config
+C:\Georgi\Softuni\07-ORM-EntityFramework\03_CodeFirst_OOP\CodeFirstOOP\Hospital\bin\Debug\Hospital.exe
+C:\Georgi\Softuni\07-ORM-EntityFramework\03_CodeFirst_OOP\CodeFirstOOP\Hospital\bin\Debug\Hospital.pdb
+C:\Georgi\Softuni\07-ORM-EntityFramework\03_CodeFirst_OOP\CodeFirstOOP\Hospital\bin\Debug\EntityFramework.dll
+C:\Georgi\Softuni\07-ORM-EntityFramework\03_CodeFirst_OOP\CodeFirstOOP\Hospital\bin\Debug\EntityFramework.SqlServer.dll
+C:\Georgi\Softuni\07-ORM-EntityFramework\03_CodeFirst_OOP\CodeFirstOOP\Hospital\bin\Debug\EntityFramework.xml
+C:\Georgi\Softuni\07-ORM-EntityFramework\03_CodeFirst_OOP\CodeFirstOOP\Hospital\bin\Debug\EntityFramework.SqlServer.xml
+C:\Georgi\Softuni\07-ORM-EntityFramework\03_CodeFirst_OOP\CodeFirstOOP\Hospital\obj\Debug\Hospital.csprojResolveAssemblyReference.cache
+C:\Georgi\Softuni\07-ORM-EntityFramework\03_CodeFirst_OOP\CodeFirstOOP\Hospital\obj\Debug\Hospital.Form1.resources
+C:\Georgi\Softuni\07-ORM-EntityFramework\03_CodeFirst_OOP\CodeFirstOOP\Hospital\obj\Debug\Hospital.Properties.Resources.resources
+C:\Georgi\Softuni\07-ORM-EntityFramework\03_CodeFirst_OOP\CodeFirstOOP\Hospital\obj\Debug\Hospital.csproj.GenerateResource.Cache
+C:\Georgi\Softuni\07-ORM-EntityFramework\03_CodeFirst_OOP\CodeFirstOOP\Hospital\obj\Debug\Hospital.exe
+C:\Georgi\Softuni\07-ORM-EntityFramework\03_CodeFirst_OOP\CodeFirstOOP\Hospital\obj\Debug\Hospital.pdb
