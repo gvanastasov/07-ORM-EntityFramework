@@ -61,7 +61,7 @@ namespace OOP_intro
                         break;
                     case 6:
                         {
-
+                            MathUtilities();
                         }
                         break;
                 }
@@ -69,6 +69,60 @@ namespace OOP_intro
             }
 
 
+        }
+
+        private static void MathUtilities()
+        {
+            Console.Clear();
+            Console.WriteLine("Use simple math untill keyword 'back' is typed:");
+            Console.WriteLine();
+
+
+            while (true)
+            {
+                var cmd = Console.ReadLine();
+
+                if (cmd == "back") break;
+
+                var tokens = cmd.Split(' ');
+
+                var a = float.Parse(tokens[1]);
+                var b = float.Parse(tokens[2]);
+
+                switch (tokens[0].ToLower())
+                {
+                    case "sum":
+                        {
+                            Console.WriteLine(" = " + MathUtil.Sum(a, b));
+                        }
+                        break;
+                    case "subtract":
+                        {
+                            Console.WriteLine(" = " + MathUtil.Subtract(a, b));
+                        }
+                        break;
+                    case "multiply":
+                        {
+                            Console.WriteLine(" = " + MathUtil.Multiply(a, b));
+                        }
+                        break;
+                    case "divide":
+                        {
+                            Console.WriteLine(" = " + MathUtil.Divide(a, b));
+                        }
+                        break;
+                    case "percentage":
+                        {
+                            Console.WriteLine(" = " + MathUtil.Percentage(a, b));
+                        }
+                        break;
+                    default:
+                        {
+                            Console.WriteLine("Use only: sum, subtract, multiply, divide, percentage");
+                        }
+                        break;
+                }
+            }
         }
 
         private static void PlanckConstant()
