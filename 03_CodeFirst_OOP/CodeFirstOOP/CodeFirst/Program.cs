@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CodeFirst.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,8 +11,20 @@ namespace CodeFirst
     {
         static void Main(string[] args)
         {
-            var context = new GringottsContext();
-            context.Database.Initialize(true);
+            //var context = new UsersContext();
+            //context.Database.Initialize(true);
+
+            //using (context)
+            //{
+            // TODO: needs a valid entity
+
+            //    var newUser = new User();
+            //    newUser.Username = "Pesho";
+            //    newUser.Password = "BestPassword";
+            //    newUser.Age = 10;
+            //    context.Users.Add(newUser);
+            //    context.SaveChanges();
+            //}
         }
     }
 }
