@@ -1,0 +1,6 @@
+C:\Georgi\Softuni\07-ORM-EntityFramework\03_CodeFirst_OOP\CodeFirstOOP\OOP_intro\bin\Debug\OOP_intro.exe.config
+C:\Georgi\Softuni\07-ORM-EntityFramework\03_CodeFirst_OOP\CodeFirstOOP\OOP_intro\bin\Debug\OOP_intro.exe
+C:\Georgi\Softuni\07-ORM-EntityFramework\03_CodeFirst_OOP\CodeFirstOOP\OOP_intro\bin\Debug\OOP_intro.pdb
+C:\Georgi\Softuni\07-ORM-EntityFramework\03_CodeFirst_OOP\CodeFirstOOP\OOP_intro\obj\Debug\OOP_intro.csprojResolveAssemblyReference.cache
+C:\Georgi\Softuni\07-ORM-EntityFramework\03_CodeFirst_OOP\CodeFirstOOP\OOP_intro\obj\Debug\OOP_intro.exe
+C:\Georgi\Softuni\07-ORM-EntityFramework\03_CodeFirst_OOP\CodeFirstOOP\OOP_intro\obj\Debug\OOP_intro.pdb
