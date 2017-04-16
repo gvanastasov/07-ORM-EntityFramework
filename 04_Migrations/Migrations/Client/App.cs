@@ -15,6 +15,11 @@
             var ctx = new LocalStoreContext();
             ctx.Database.Initialize(true);
 
+            //Task1_LocalStoreCreate(ctx);
+        }
+
+        private static void Task1_LocalStoreCreate(LocalStoreContext ctx)
+        {
             ctx.Products.Add(new Product()
             {
                 Name = "Lutenica",

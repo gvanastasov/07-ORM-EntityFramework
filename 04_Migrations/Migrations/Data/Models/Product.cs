@@ -12,5 +12,7 @@ namespace Data.Models
         public string Name { get; set; }
         public string DistributorName { get; set; }
         public decimal Price { get; set; }
+        public float Weight { get; set; }
+        public int Quantity { get; set; }
     }
 }
