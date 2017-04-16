@@ -1,0 +1,10 @@
+C:\Georgi\Softuni\07-ORM-EntityFramework\04_Migrations\Migrations\Data\obj\Debug\Data.csprojResolveAssemblyReference.cache
+C:\Georgi\Softuni\07-ORM-EntityFramework\04_Migrations\Migrations\Data\bin\Debug\Data.dll.config
+C:\Georgi\Softuni\07-ORM-EntityFramework\04_Migrations\Migrations\Data\bin\Debug\Data.dll
+C:\Georgi\Softuni\07-ORM-EntityFramework\04_Migrations\Migrations\Data\bin\Debug\Data.pdb
+C:\Georgi\Softuni\07-ORM-EntityFramework\04_Migrations\Migrations\Data\bin\Debug\EntityFramework.dll
+C:\Georgi\Softuni\07-ORM-EntityFramework\04_Migrations\Migrations\Data\bin\Debug\EntityFramework.SqlServer.dll
+C:\Georgi\Softuni\07-ORM-EntityFramework\04_Migrations\Migrations\Data\bin\Debug\EntityFramework.xml
+C:\Georgi\Softuni\07-ORM-EntityFramework\04_Migrations\Migrations\Data\bin\Debug\EntityFramework.SqlServer.xml
+C:\Georgi\Softuni\07-ORM-EntityFramework\04_Migrations\Migrations\Data\obj\Debug\Data.dll
+C:\Georgi\Softuni\07-ORM-EntityFramework\04_Migrations\Migrations\Data\obj\Debug\Data.pdb
