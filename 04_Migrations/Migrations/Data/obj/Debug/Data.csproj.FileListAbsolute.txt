@@ -8,3 +8,6 @@ C:\Georgi\Softuni\07-ORM-EntityFramework\04_Migrations\Migrations\Data\bin\Debug
 C:\Georgi\Softuni\07-ORM-EntityFramework\04_Migrations\Migrations\Data\bin\Debug\EntityFramework.SqlServer.xml
 C:\Georgi\Softuni\07-ORM-EntityFramework\04_Migrations\Migrations\Data\obj\Debug\Data.dll
 C:\Georgi\Softuni\07-ORM-EntityFramework\04_Migrations\Migrations\Data\obj\Debug\Data.pdb
+C:\Georgi\Softuni\07-ORM-EntityFramework\04_Migrations\Migrations\Data\obj\Debug\Data.Migrations.InitialCreate.resources
+C:\Georgi\Softuni\07-ORM-EntityFramework\04_Migrations\Migrations\Data\obj\Debug\Data.csproj.GenerateResource.Cache
+C:\Georgi\Softuni\07-ORM-EntityFramework\04_Migrations\Migrations\Data\obj\Debug\Data.Migrations.ProductsAddColumnDescription.resources
