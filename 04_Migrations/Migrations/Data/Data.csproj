@@ -55,8 +55,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CustomContextInit.cs" />
+    <Compile Include="CustomCreateAndSeedInitializer.cs" />
     <Compile Include="LocalStoreContext.cs" />
+    <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\Product.cs" />
+    <Compile Include="Models\Sale.cs" />
+    <Compile Include="Models\StoreLocation.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

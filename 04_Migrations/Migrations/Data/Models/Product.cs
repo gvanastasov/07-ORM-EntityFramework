@@ -10,9 +10,13 @@ namespace Data.Models
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        public string DistributorName { get; set; }
+        public double Quantity { get; set; }
         public decimal Price { get; set; }
-        public float Weight { get; set; }
-        public int Quantity { get; set; }
+        public virtual ICollection<Sale> SalesOfProduct { get; set; }
+
+        public Product()
+        {
+            this.SalesOfProduct = new HashSet<Sale>();
+        }
     }
 }

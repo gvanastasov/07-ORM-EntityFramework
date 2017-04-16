@@ -18,21 +18,18 @@
             {
                 Name = "Lutenica",
                 Price = 2.60m,
-                DistributorName = "Pyrvomai"
             });
 
             context.Products.Add(new Product()
             {
                 Name = "Kashkaval",
                 Price = 3.60m,
-                DistributorName = "Vitosha"
             });
 
             context.Products.Add(new Product()
             {
                 Name = "Sirene",
                 Price = 8.60m,
-                DistributorName = "Aprilci"
             });
         }
     }

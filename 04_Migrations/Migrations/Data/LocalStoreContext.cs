@@ -10,9 +10,12 @@ namespace Data
         public LocalStoreContext()
             : base("name=LocalStoreContext")
         {
-            Database.SetInitializer<LocalStoreContext>(new CustomContextInit());
+            Database.SetInitializer<LocalStoreContext>(new CustomCreateAndSeedInitializer());
         }
 
         public virtual DbSet<Product> Products { get; set; }
+        public virtual DbSet<Customer> Customers { get; set; }
+        public virtual DbSet<StoreLocation> StoreLocations { get; set; }
+        public virtual DbSet<Sale> Sales { get; set; }
     }
 }
