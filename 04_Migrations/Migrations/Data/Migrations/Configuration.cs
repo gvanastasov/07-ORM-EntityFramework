@@ -15,15 +15,15 @@ namespace Data.Migrations
 
         protected override void Seed(Data.LocalStoreContext context)
         {
-            var products = context.Products.ToList();
+            //var products = context.Products.ToList();
 
-            foreach (var item in products)
-            {
-                if(string.IsNullOrEmpty(item.Description))
-                {
-                    item.Description = "No description";
-                }
-            }
+            //foreach (var item in products)
+            //{
+            //    if(string.IsNullOrEmpty(item.Description))
+            //    {
+            //        item.Description = "No description";
+            //    }
+            //}
         }
     }
 }
