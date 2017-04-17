@@ -1,0 +1,13 @@
+C:\Georgi\Softuni\07-ORM-EntityFramework\05_Relations\Studet_System\StudentSys\Client\bin\Debug\Client.exe.config
+C:\Georgi\Softuni\07-ORM-EntityFramework\05_Relations\Studet_System\StudentSys\Client\bin\Debug\Client.exe
+C:\Georgi\Softuni\07-ORM-EntityFramework\05_Relations\Studet_System\StudentSys\Client\bin\Debug\Client.pdb
+C:\Georgi\Softuni\07-ORM-EntityFramework\05_Relations\Studet_System\StudentSys\Client\bin\Debug\Data.dll
+C:\Georgi\Softuni\07-ORM-EntityFramework\05_Relations\Studet_System\StudentSys\Client\bin\Debug\EntityFramework.dll
+C:\Georgi\Softuni\07-ORM-EntityFramework\05_Relations\Studet_System\StudentSys\Client\bin\Debug\EntityFramework.SqlServer.dll
+C:\Georgi\Softuni\07-ORM-EntityFramework\05_Relations\Studet_System\StudentSys\Client\bin\Debug\Data.pdb
+C:\Georgi\Softuni\07-ORM-EntityFramework\05_Relations\Studet_System\StudentSys\Client\bin\Debug\Data.dll.config
+C:\Georgi\Softuni\07-ORM-EntityFramework\05_Relations\Studet_System\StudentSys\Client\bin\Debug\EntityFramework.xml
+C:\Georgi\Softuni\07-ORM-EntityFramework\05_Relations\Studet_System\StudentSys\Client\bin\Debug\EntityFramework.SqlServer.xml
+C:\Georgi\Softuni\07-ORM-EntityFramework\05_Relations\Studet_System\StudentSys\Client\obj\Debug\Client.csprojResolveAssemblyReference.cache
+C:\Georgi\Softuni\07-ORM-EntityFramework\05_Relations\Studet_System\StudentSys\Client\obj\Debug\Client.exe
+C:\Georgi\Softuni\07-ORM-EntityFramework\05_Relations\Studet_System\StudentSys\Client\obj\Debug\Client.pdb
