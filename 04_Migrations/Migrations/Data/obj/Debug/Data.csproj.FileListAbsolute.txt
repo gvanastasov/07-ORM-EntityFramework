@@ -12,3 +12,4 @@ C:\Georgi\Softuni\07-ORM-EntityFramework\04_Migrations\Migrations\Data\obj\Debug
 C:\Georgi\Softuni\07-ORM-EntityFramework\04_Migrations\Migrations\Data\obj\Debug\Data.csproj.GenerateResource.Cache
 C:\Georgi\Softuni\07-ORM-EntityFramework\04_Migrations\Migrations\Data\obj\Debug\Data.Migrations.ProductsAddColumnDescription.resources
 C:\Georgi\Softuni\07-ORM-EntityFramework\04_Migrations\Migrations\Data\obj\Debug\Data.Migrations.SalesAddDateDefault.resources
+C:\Georgi\Softuni\07-ORM-EntityFramework\04_Migrations\Migrations\Data\obj\Debug\Data.Migrations.CustomerAddedAge.resources

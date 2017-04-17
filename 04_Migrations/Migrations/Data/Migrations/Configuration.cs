@@ -10,8 +10,8 @@ namespace Data.Migrations
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = true;
-            AutomaticMigrationDataLossAllowed = true;
+            AutomaticMigrationsEnabled = false;
+            //AutomaticMigrationDataLossAllowed = true;
             ContextKey = "Data.LocalStoreContext";
         }
 
