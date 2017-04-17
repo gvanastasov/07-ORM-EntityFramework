@@ -8,3 +8,5 @@ C:\Georgi\Softuni\07-ORM-EntityFramework\05_Relations\Studet_System\StudentSys\D
 C:\Georgi\Softuni\07-ORM-EntityFramework\05_Relations\Studet_System\StudentSys\Data\bin\Debug\EntityFramework.SqlServer.xml
 C:\Georgi\Softuni\07-ORM-EntityFramework\05_Relations\Studet_System\StudentSys\Data\obj\Debug\Data.dll
 C:\Georgi\Softuni\07-ORM-EntityFramework\05_Relations\Studet_System\StudentSys\Data\obj\Debug\Data.pdb
+C:\Georgi\Softuni\07-ORM-EntityFramework\05_Relations\Studet_System\StudentSys\Data\obj\Debug\Data.Migrations.Initialize.resources
+C:\Georgi\Softuni\07-ORM-EntityFramework\05_Relations\Studet_System\StudentSys\Data\obj\Debug\Data.csproj.GenerateResource.Cache

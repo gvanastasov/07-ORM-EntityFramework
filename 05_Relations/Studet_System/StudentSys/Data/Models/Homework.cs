@@ -23,8 +23,8 @@ namespace Data.Models
         public DateTime SubmissionDate { get; set; }
 
         [ForeignKey("Course")]
-        public int CourceId { get; set; }
-        public virtual Course Course { get; set; }
+        public int CourseId { get; set; }
+        public Course Course { get; set; }
 
         [ForeignKey("Student")]
         public int StudentId { get; set; }
