@@ -14,11 +14,11 @@ namespace Data
             context.Products.Add(new Product(){ Name = "Chuska",Price = 0.55m,Quantity = 50 });
             context.Products.Add(new Product(){ Name = "Luk",Price = 0.35m,Quantity = 33 });
 
-            var pesho = context.Customers.Add(new Customer() { Name = "Pesho" });
-            context.Customers.Add(new Customer() { Name = "Ivan" });
-            context.Customers.Add(new Customer() { Name = "Tosho" });
-            var gosho = context.Customers.Add(new Customer() { Name = "Gosho" });
-            context.Customers.Add(new Customer() { Name = "Daniel" });
+            var pesho = context.Customers.Add(new Customer() { FirstName = "Pesho" });
+            context.Customers.Add(new Customer() { FirstName = "Ivan" });
+            context.Customers.Add(new Customer() { FirstName = "Tosho" });
+            var gosho = context.Customers.Add(new Customer() { FirstName = "Gosho" });
+            context.Customers.Add(new Customer() { FirstName = "Daniel" });
 
             var centar = context.StoreLocations.Add(new StoreLocation() { LocationName = "Centar" });
             context.StoreLocations.Add(new StoreLocation() { LocationName = "Krainovo" });

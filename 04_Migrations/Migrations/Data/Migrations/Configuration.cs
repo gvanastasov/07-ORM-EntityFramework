@@ -1,5 +1,6 @@
 namespace Data.Migrations
 {
+    using Data.Models;
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
@@ -9,7 +10,8 @@ namespace Data.Migrations
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = false;
+            AutomaticMigrationsEnabled = true;
+            AutomaticMigrationDataLossAllowed = true;
             ContextKey = "Data.LocalStoreContext";
         }
 
@@ -24,6 +26,26 @@ namespace Data.Migrations
             //        item.Description = "No description";
             //    }
             //}
+
+            context.Customers.Add(new Customer()
+            {
+                FirstName = "pesho",
+                LastName = "peshov",
+            });
+
+            context.Customers.Add(new Customer()
+            {
+                FirstName = "gesho",
+                LastName = "geshov",
+            });
+
+            context.Customers.Add(new Customer()
+            {
+                FirstName = "tosho",
+                LastName = "toshov",
+            });
+
+            base.Seed(context);
         }
     }
 }
